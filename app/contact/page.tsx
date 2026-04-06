@@ -24,6 +24,24 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
+    
+    if (!form.name || !form.phone) return;
+
+    const messagePayload = `Hello, I want to book an appointment.
+
+Name: ${form.name}
+Phone: ${form.phone}
+Email: ${form.email || "N/A"}
+Condition: ${form.condition || "N/A"}
+Preferred Time: ${form.preferredTime || "N/A"}
+Details: ${form.message || "None"}`;
+
+    const waLink = `https://wa.me/917008512773?text=${encodeURIComponent(messagePayload)}`;
+    
+    // Open WhatsApp in a new tab instantly to avoid popup blockers
+    window.open(waLink, "_blank");
+    
+    // Show the confirmation state in the current tab
     setSubmitted(true);
   };
 
@@ -69,6 +87,22 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-6 font-heading">
                 Request an Appointment
               </h2>
+
+              <div className="mb-8 p-5 bg-[#25D366]/10 border border-[#25D366]/20 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <h3 className="font-bold text-slate-800 text-lg">Prefer WhatsApp?</h3>
+                  <p className="text-sm text-slate-600">Skip the form and chat with our front desk instantly.</p>
+                </div>
+                <a 
+                  href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto flex justify-center items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 rounded-full shadow-sm hover:shadow-md transition-all whitespace-nowrap"
+                >
+                  <MessageSquare size={18} />
+                  Chat on WhatsApp
+                </a>
+              </div>
 
               {submitted ? (
                 <div className="card p-10 text-center">
@@ -270,20 +304,18 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="map-wrapper">
-                <div className="h-64 bg-slate-100 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <MapPin size={40} className="text-primary-400 mx-auto mb-2" />
-                    <p className="text-slate-500 text-sm font-medium">SAI SHREE HEALTH CARE</p>
-                    <p className="text-slate-400 text-xs mt-1">Ring Road, Mangalabag, Cuttack</p>
-                  </div>
-                  {/* Embed actual Google Maps iframe: */}
-                  {/* <iframe
-                    src="https://www.google.com/maps/embed?pb=PASTE_YOUR_MAP_EMBED_URL_HERE"
-                    width="100%" height="256" style={{border:0}} allowFullScreen loading="lazy"
-                  /> */}
-                </div>
+              {/* Map embed */}
+              <div className="map-wrapper rounded-2xl overflow-hidden shadow-xl border border-slate-100 relative">
+                <iframe
+                  title="SAI SHREE HEALTH CARE Location Map"
+                  src="https://maps.google.com/maps?q=SAI%20SHREE%20HEALTH%20CARE,%20Near%20Shreema%20Hospital,%20Ring%20Road,%20Mangalabag,%20Cuttack-753001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="100%" 
+                  height="300" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  className="w-full h-[300px] bg-slate-100"
+                />
               </div>
 
               {/* Note */}

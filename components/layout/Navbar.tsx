@@ -96,14 +96,16 @@ export default function Navbar() {
               </a>
             </div>
 
-            <Link
-              href="/contact"
+            <a
+              href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-animated text-white text-[13px] font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-blue hover:-translate-y-0.5 group"
-              style={{ background: 'linear-gradient(-45deg, #1B6CA8 0%, #0BA898 50%, #1B6CA8 100%)' }}
+              style={{ background: '#25D366' }}
             >
               <Calendar size={14} className="group-hover:rotate-12 transition-transform" />
               Book
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Right CTA & Menu Button */}
@@ -145,14 +147,16 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="pt-2 mt-1 border-t border-slate-100">
-                <Link
-                  href="/contact"
+                <a
+                  href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-gradient-animated text-white font-bold py-3.5 rounded-xl shadow-blue active:scale-[0.98] transition-transform"
-                  style={{ background: 'linear-gradient(-45deg, #1B6CA8 0%, #0BA898 50%, #1B6CA8 100%)' }}
+                  style={{ background: '#25D366' }}
                 >
                   <Calendar size={16} />
-                  Book Appointment Now
-                </Link>
+                  Book Appointment
+                </a>
               </div>
             </div>
           </div>

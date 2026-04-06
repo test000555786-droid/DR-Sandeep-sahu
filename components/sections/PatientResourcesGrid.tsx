@@ -125,9 +125,14 @@ export default function PatientResourcesGrid({ resources }: { resources: any[] }
         >
           <p className="text-slate-600 text-base">
             <strong className="text-primary-700">Need personalized guidance?</strong> These resources are general guides. For advice specific to your condition and medication, please{" "}
-            <Link href="/contact" className="text-primary-600 font-semibold hover:underline">
+            <a 
+              href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 font-semibold hover:underline"
+            >
               book a consultation
-            </Link>{" "}
+            </a>{" "}
             with Dr. Sahu.
           </p>
         </motion.div>

@@ -169,13 +169,15 @@ export default async function BlogDetailPage(props: { params: Params }) {
                   >
                     Call Now
                   </a>
-                  <Link
-                    href="/contact"
+                  <a
+                    href={`https://wa.me/917008512773?text=${encodeURIComponent(`Hello, I would like to consult regarding ${blog?.title || 'an Endocrinology issue'}.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center border-2 border-white/40 font-bold py-3.5 px-4 rounded-xl transition-all hover:bg-white/10 hover:-translate-y-1 whitespace-nowrap"
                     style={{ color: 'white' }}
                   >
                     Book Appointment
-                  </Link>
+                  </a>
                 </div>
               </div>
 

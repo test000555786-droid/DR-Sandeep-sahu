@@ -54,10 +54,16 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
-              <Link href="/contact" className="btn-primary">
+              <a 
+                href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ backgroundColor: '#25D366', borderColor: '#25D366' }}
+              >
                 <Calendar size={17} />
                 Book Appointment
-              </Link>
+              </a>
               <a href={`tel:${doctor.phone}`} className="btn-secondary">
                 <Phone size={17} />
                 {doctor.phone}

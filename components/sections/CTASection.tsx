@@ -35,13 +35,15 @@ export default function CTASection() {
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-10">
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 bg-white text-primary-700 font-bold px-8 py-4 rounded-full hover:bg-primary-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-base"
+          <a
+            href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#25D366] text-white font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-base hover:bg-[#20bd5a]"
           >
             <Calendar size={18} />
             Book an Appointment
-          </Link>
+          </a>
           <a
             href={`tel:${doctor.phone}`}
             className="flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-8 py-4 rounded-full transition-all border border-white/30 text-base"

@@ -26,12 +26,14 @@ export default function Footer() {
                 <Phone size={16} />
                 Call Now
               </a>
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 bg-white/20 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/30 transition-colors text-sm border border-white/30"
+              <a
+                href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#20bd5a] transition-colors text-sm shadow-md"
               >
                 Book Appointment
-              </Link>
+              </a>
             </div>
           </div>
         </div>

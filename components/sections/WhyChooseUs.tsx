@@ -79,14 +79,16 @@ export default function WhyChooseUs() {
                 With a deep commitment to treating the cause rather than just the symptoms, our clinic offers world-class endocrinology care built around your specific needs.
               </p>
               
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-animated text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-blue hover:-translate-y-1 hover:shadow-xl group"
-                style={{ background: 'linear-gradient(-45deg, #1B6CA8 0%, #0BA898 50%, #1B6CA8 100%)' }}
+              <a
+                href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-blue hover:-translate-y-1 hover:shadow-xl group"
+                style={{ background: '#25D366' }}
               >
                 <Calendar size={18} className="group-hover:rotate-12 group-hover:scale-110 transition-transform" />
                 Book Your Consultation
-              </Link>
+              </a>
             </motion.div>
           </div>
 

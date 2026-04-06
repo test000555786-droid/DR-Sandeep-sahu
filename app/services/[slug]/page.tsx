@@ -158,13 +158,15 @@ export default async function ServiceDetailPage(props: { params: Params }) {
                 <p className="text-blue-100 text-sm mb-5">
                   Don't let symptoms go undiagnosed. Speak with Dr. Sahu today.
                 </p>
-                <Link
-                  href="/contact"
+                <a
+                  href={`https://wa.me/917008512773?text=${encodeURIComponent(`Hello, I want to book an appointment for ${service?.title || 'a Consultation'}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-white text-blue-700 font-bold py-3 rounded-xl mb-3 hover:bg-blue-50 transition-colors"
                 >
                   <Calendar size={16} />
                   Book Appointment
-                </Link>
+                </a>
                 <a
                   href={`tel:${doctor.phone}`}
                   className="flex items-center justify-center gap-2 w-full bg-blue-500/40 hover:bg-blue-500/60 text-white font-semibold py-3 rounded-xl transition-colors border border-white/20"

@@ -15,9 +15,15 @@ export default function NotFound() {
             <Home size={16} />
             Go Home
           </Link>
-          <Link href="/contact" className="btn-secondary">
+          <a
+            href={`https://wa.me/917008512773?text=${encodeURIComponent("Hello, I want to book an appointment.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{ color: '#25D366', borderColor: '#25D366' }}
+          >
             Book Appointment
-          </Link>
+          </a>
         </div>
       </div>
     </div>
