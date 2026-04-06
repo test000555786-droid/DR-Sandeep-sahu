@@ -10,7 +10,10 @@ export async function generateStaticParams() {
   return blogs.map((b) => ({ slug: b.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+type Params = Promise<{ slug: string }>;
+
+export async function generateMetadata(props: { params: Params }): Promise<Metadata> {
+  const params = await props.params;
   const blog = blogs.find((b) => b.slug === params.slug);
   if (!blog) return { title: "Blog Not Found" };
   return {
@@ -27,7 +30,10 @@ const categoryColors: Record<string, string> = {
   General: "bg-slate-100 text-slate-700",
 };
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
+export default async function BlogDetailPage(props: { params: Params }) {
+  const params = await props.params;
+  console.log("SLUG:", params.slug);
+  
   const blog = blogs.find((b) => b.slug === params.slug);
   if (!blog) notFound();
 
